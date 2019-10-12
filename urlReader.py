@@ -5,11 +5,11 @@ import numpy as np
 import pandas as pd
 import time
 
-def urlSearch():
-    url = "https://www.cnn.com/2019/10/11/politics/donald-trump-court-rulings-bad-day/index.html"
+def analyze(url):
+    ##url = "https://www.cnn.com/2019/10/11/politics/donald-trump-court-rulings-bad-day/index.html"
 
     # Request
-    r1 = requests.get(url)
+    r1 = requests.get(str(url))
 
     # We'll save in coverpage the cover page content
     coverpage = r1.content

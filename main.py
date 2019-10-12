@@ -13,23 +13,55 @@
 # limitations under the License.
 
 # [START gae_python37_render_template]
-import datetime
 
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for, request
 
-import script1
-import from_url_script
+import inputText
+import urlReader
 
 app = Flask(__name__)
 
 @app.route('/')
 def root():
     #result = web_scrape.quickResult()
-    result = script1.simpleReturn()
-    result2 = from_url_script.urlSearch()
+    #result = inputText.simpleReturn()
+    #result2 = urlReader.urlSearch()
 
-    return render_template('index.html', times=dummy_times, result=result, result2=result2)
+    return render_template('index.html')#, result=result, result2=result2)
 
+@app.route('/test/')
+def test():
+    #result = web_scrape.quickResult()
+    return redirect(url_for('results', inptType="url", inpt="faeffa"))
+
+@app.route('/results/<inptType>/<inpt>')
+def results(inptType, inpt):
+    if not inptType or not inpt:
+        return redirect(url_for('/'))
+
+    result = None
+    if inptType == "url":
+        result = urlReader.analyze(inpt)
+    else:
+        result = inputText.analyze(inpt)
+    #result = inputText.simpleReturn()
+    #result2 = urlReader.urlSearch()
+
+    return render_template('results.html', result=result)
+
+
+#Handle URL
+@app.route('/handle_URL', methods=['POST'])
+def handle_URL():
+    url = request.form['articleURL']
+    return redirect(url_for('results', inptType="url", inpt=url))
+
+
+#Handle Text
+@app.route('/handle_text', methods=['POST'])
+def handle_text():
+    text = request.form['articleText']
+    return redirect(url_for('results', inptType="text", inpt=text))
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
