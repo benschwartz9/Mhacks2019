@@ -17,24 +17,18 @@ import datetime
 
 from flask import Flask, render_template
 
-import web_scrape
 import script1
+import from_url_script
 
 app = Flask(__name__)
 
 @app.route('/')
 def root():
-    # For the sake of example, use static information to inflate the template.
-    # This will be replaced with real information in later steps.
-    dummy_times = [datetime.datetime(2018, 1, 1, 10, 0, 0),
-                   datetime.datetime(2018, 1, 2, 10, 30, 0),
-                   datetime.datetime(2018, 1, 3, 11, 0, 0),
-                   ]
-
     #result = web_scrape.quickResult()
     result = script1.simpleReturn()
+    result2 = from_url_script.urlSearch()
 
-    return render_template('index.html', times=dummy_times, result=result)
+    return render_template('index.html', times=dummy_times, result=result, result2=result2)
 
 
 if __name__ == '__main__':
