@@ -17,8 +17,8 @@ import datetime
 
 from flask import Flask, render_template
 
-import web_scrape
 import script1
+import from_url_script
 
 app = Flask(__name__)
 
@@ -33,8 +33,9 @@ def root():
 
     #result = web_scrape.quickResult()
     result = script1.simpleReturn()
+    result2 = from_url_script.urlSearch()
 
-    return render_template('index.html', times=dummy_times, result=result)
+    return render_template('index.html', times=dummy_times, result=result, result2=result2)
 
 
 if __name__ == '__main__':
