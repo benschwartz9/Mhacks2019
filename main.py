@@ -34,14 +34,12 @@ def test():
     #result = web_scrape.quickResult()
     return redirect(url_for('results', inptType="url", inpt="faeffa"))
 
-@app.route('/results/<inptType>/<inpt>')
-def results(inptType, inpt):
-    if not inptType or not inpt:
-        return redirect(url_for('/'))
+@app.route('/results/<path:inpt>')
+def results(inpt):
 
     result = None
-    if inptType == "url":
-        result = urlReader.analyze(inpt)
+    if inpt[0:4] == "www.":
+        result = urlReader.analyze("http://"+inpt)
     else:
         result = inputText.analyze(inpt)
     #result = inputText.simpleReturn()
@@ -54,14 +52,18 @@ def results(inptType, inpt):
 @app.route('/handle_URL', methods=['POST'])
 def handle_URL():
     url = request.form['articleURL']
-    return redirect(url_for('results', inptType="url", inpt=url))
+    if url[0:7] == "http://":
+        url = url[7:]
+    if url[0:8] == "https://":
+        url = url[8:]    
+    return redirect(url_for('results', inpt=url))
 
 
 #Handle Text
 @app.route('/handle_text', methods=['POST'])
 def handle_text():
     text = request.form['articleText']
-    return redirect(url_for('results', inptType="text", inpt=text))
+    return redirect(url_for('results', inpt=text))
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
