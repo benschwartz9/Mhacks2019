@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>Datastore and Firebase Auth Example</title>
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
-  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="../static/script.js"></script>
+  <link type="text/css" rel="stylesheet" href="../static/style.css">
 </head>
   <body>
       <form action="{{ url_for('sendsms') }}" method="post">
@@ -20,7 +20,7 @@
           </p>
         </fieldset>
       </form>
-      <th><input type="submit" name="button" class="btn btn-success" value="Send Request"></a></th>
+      <th><input type="submit" name="button" class="btn btn-success" value="Send Request"s></a></th>
   </body>
 <body>
 <<<<<<< HEAD
@@ -30,5 +30,8 @@
   <p>{{result2}}</p>
 
 >>>>>>> b2ea4cb173945ede8988ef7a8d556c1c96d2c7f5
+
+<p id = "output"></p>
+
 </body>
 </html>
