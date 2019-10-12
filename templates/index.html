@@ -5,14 +5,17 @@
   <script src="{{ url_for('static', filename='script.js') }}"></script>
   <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
-  <h1>BEN WAS HERE</h1>
-  <h1>Datastore and Firebase Auth Example</h1>
-
-  <h2>Last 10 visits</h2>
-  {% for time in times %}
-    <p>{{ time }}</p>
-  {% endfor %}
-
-</body>
+  <body>
+      <form>
+        <fieldset>
+          <legend>Text input</legend>
+          <p>
+            <label>Article Text Input</label>
+            <textarea id = "articleText"
+                  rows = "3"
+                  cols = "80">Paste your article here</textarea>
+          </p>
+        </fieldset>
+      </form>
+  </body>
 </html>
