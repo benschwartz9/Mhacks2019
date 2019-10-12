@@ -1,8 +1,46 @@
 <!doctype html>
 <html>
+  <head>
+    <title>Doot Doot</title>
+    <link rel="icon" href="../static/doot.gif">
+    <script src="../static/script.js"></script>
+    <link type="text/css" rel="stylesheet" href="../static/style.css">
+  </head>
+    <body>
+      <br><br><br>
+      <img width="256" class="center" height="256" alt="B" src="../static/doot.gif"><br>
+      <p>This program calculates the bias of a given article.</p>
+      <p>The URL of an article can be used as well as plain text.</p>
+      <br>
 
+      <div class="tab">
+        <button class="tablinks" onclick="showTabContent(event, 'URLTab')" id="default">URL</button>
+        <button class="tablinks" onclick="showTabContent(event, 'textTab')">Text</button>
+      </div>
+
+      <div id="URLTab" class="tabcontent">
+        <br><br>
+          <form action="{{ url_for('handle_URL') }}" method="post">
+            <th><input type="text" name="articleURL" placeholder=" Enter a URL" style="width:75%;height:19px;"></th>
+            <br><br>
+            <th><input type="submit" value="Analyze Article"></a></th> 
+          </form>
+          <br>
+      </div>
+
+      <div id="textTab" class="tabcontent" style="display: none">
+        <br><br>
+          <form action="{{ url_for('handle_text') }}" method="post">
             <textarea type="text"
+                      name = "articleText"
+                      placeholder="Paste your text here" 
+                      rows = "10"
+                      style="width:75%"></textarea>
+                      <br><br>
+            <th><input type="submit" value="Analyze Text"></a></th>
+          </form>
+          <br>
+      </div>
 
-
-
+  </body>
 </html>
