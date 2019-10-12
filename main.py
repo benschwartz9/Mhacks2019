@@ -13,7 +13,6 @@
 # limitations under the License.
 
 # [START gae_python37_render_template]
-import datetime
 
 from flask import Flask, render_template
 
@@ -28,7 +27,7 @@ def root():
     result = script1.simpleReturn()
     result2 = from_url_script.urlSearch()
 
-    return render_template('index.html', times=dummy_times, result=result, result2=result2)
+    return render_template('index.html', result=result, result2=result2)
 
 
 if __name__ == '__main__':
