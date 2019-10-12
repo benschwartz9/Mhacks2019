@@ -6,16 +6,22 @@
   <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
   <body>
-      <form>
+      <form action="{{ url_for('sendsms') }}" method="post">
         <fieldset>
           <legend>Text input</legend>
+	  <th><input type="text" name="articleURL" 
+		  value="Enter Article URL" required></th>
           <p>
             <label>Article Text Input</label>
-            <textarea id = "articleText"
+            <textarea type="text"
+		  name = "articleText"
                   rows = "3"
                   cols = "80">Paste your article here</textarea>
           </p>
         </fieldset>
       </form>
+      <th><input type="submit" name="button" class="btn btn-success" value="Send Request"></a></th>
   </body>
+<body>
+</body>
 </html>

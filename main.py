@@ -17,8 +17,10 @@ import datetime
 
 from flask import Flask, render_template
 
-app = Flask(__name__)
+import web_scrape
+import script1
 
+app = Flask(__name__)
 
 @app.route('/')
 def root():
@@ -29,7 +31,10 @@ def root():
                    datetime.datetime(2018, 1, 3, 11, 0, 0),
                    ]
 
-    return render_template('index.html', times=dummy_times)
+    #result = web_scrape.quickResult()
+    result = script1.simpleReturn()
+
+    return render_template('index.html', times=dummy_times, result=result)
 
 
 if __name__ == '__main__':
@@ -41,4 +46,5 @@ if __name__ == '__main__':
     # http://flask.pocoo.org/docs/1.0/quickstart/#static-files. Once deployed,
     # App Engine itself will serve those files as configured in app.yaml.
     app.run(host='127.0.0.1', port=8080, debug=True)
+
 # [START gae_python37_render_template]
