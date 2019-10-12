@@ -23,10 +23,14 @@ def analyze(url):
 
     # same code but using the article contents instead of user
     list_paragraphs = []
+    final_article = None
     for p in np.arange(0, len(x)):
             paragraph = x[p].get_text()
             list_paragraphs.append(paragraph)
             final_article = " ".join(list_paragraphs)
+
+    if not final_article:
+        return "Error: The article could not be read."
 
     blob1 = TextBlob(final_article)
 

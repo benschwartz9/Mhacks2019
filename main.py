@@ -29,24 +29,18 @@ def root():
 
     return render_template('index.html')#, result=result, result2=result2)
 
-@app.route('/test/')
-def test():
-    #result = web_scrape.quickResult()
-    return redirect(url_for('results', inptType="url", inpt="faeffa"))
 
-@app.route('/results/<path:inpt>')
-def results(inpt):
-
-    result = None
-    if inpt[0:4] == "www.":
-        result = urlReader.analyze("http://"+inpt)
-    else:
-        result = inputText.analyze(inpt)
-    #result = inputText.simpleReturn()
-    #result2 = urlReader.urlSearch()
+@app.route('/resultsURL/<path:inpt>')
+def resultsURL(inpt):
+    result = urlReader.analyze("http://"+inpt)
 
     return render_template('results.html', result=result)
 
+@app.route('/resultstext/<string:inpt>')
+def resultstext(inpt):
+    result = inputText.analyze(inpt)
+
+    return render_template('results.html', result=result)
 
 #Handle URL
 @app.route('/handle_URL', methods=['POST'])
@@ -56,14 +50,16 @@ def handle_URL():
         url = url[7:]
     if url[0:8] == "https://":
         url = url[8:]    
-    return redirect(url_for('results', inpt=url))
+    return redirect(url_for('resultsURL', inpt=url))
 
 
 #Handle Text
 @app.route('/handle_text', methods=['POST'])
 def handle_text():
     text = request.form['articleText']
-    return redirect(url_for('results', inpt=text))
+    text = text.replace("/", " ")
+    text = text.replace("\n", " ")
+    return redirect(url_for('resultstext', inpt=text))
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
