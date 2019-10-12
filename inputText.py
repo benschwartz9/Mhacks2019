@@ -2,10 +2,10 @@ import nltk
 from textblob import TextBlob
 
 
-def simpleReturn():
+def analyze(inpt):
     # insert user input to a text variable and replace sentence
 
-    blob1 = TextBlob("Random jumble. with punctuation and spaces . hate words and love words.")
+    blob1 = TextBlob(str(inpt))#"Random jumble. with punctuation and spaces . hate words and love words.")
 
     my_list = []
     my_list2 = []

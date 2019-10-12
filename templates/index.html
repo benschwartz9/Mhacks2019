@@ -1,34 +1,33 @@
 <!doctype html>
 <html>
-<head>
-  <title>Datastore and Firebase Auth Example</title>
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
-  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-  <body>
-      <form action="{{ url_for('sendsms') }}" method="post">
-        <fieldset>
-          <legend>Text input</legend>
-	  <th><input type="text" name="articleURL" 
-		  value="Enter Article URL" required></th>
-          <p>
-            <label>Article Text Input</label>
+  <head>
+    <title>Datastore and Firebase Auth Example</title>
+  </head>
+    <body>
+      <legend>Spongebob Reads the News</legend>
+          <label>Article URL</label>
+          <form action="{{ url_for('handle_URL') }}" method="post">
+            <th><input type="text" name="articleURL"  value="Article URL"></th>
+            <th><input type="submit" value="Analyze Article"></a></th> 
+          </form>
+          
+        
+         <br><br><br><br>
+        
+          <form action="{{ url_for('handle_text') }}" method="post">
+            <label>Article Text</label>
+            <br>
             <textarea type="text"
-		  name = "articleText"
-                  rows = "3"
-                  cols = "80">Paste your article here</textarea>
-          </p>
-        </fieldset>
-      </form>
-      <th><input type="submit" name="button" class="btn btn-success" value="Send Request"></a></th>
-  </body>
-<body>
-<<<<<<< HEAD
-=======
-  <h1>Saturday</h1>
-  <p>{{result}}</p>
-  <p>{{result2}}</p>
+                      name = "articleText"
+                      rows = "3"
+                      cols = "80">Paste your article here</textarea>
+            <th><input type="submit" value="Analyze Text"></a></th>
+          </form>  
+          
 
->>>>>>> b2ea4cb173945ede8988ef7a8d556c1c96d2c7f5
-</body>
+  <br> <br> <br>
+    <h1>Saturday</h1>
+
+
+  </body>
 </html>
