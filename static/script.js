@@ -37,7 +37,6 @@ function showTabContent(evt, id) {
 
   	document.getElementById(id).style.display = "block";
   	evt.currentTarget.className += " active";
-}
-
- 
+} 
 // [END gae_python37_log]
+
