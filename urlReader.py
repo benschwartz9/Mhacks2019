@@ -29,11 +29,13 @@ def analyze(url):
             list_paragraphs.append(paragraph)
             final_article = " ".join(list_paragraphs)
 
+    # in case BeautifulSoup fails
     if not final_article:
         return "Error: The article could not be read."
 
     blob1 = TextBlob(final_article)
 
+    # create lists to store values 
     my_list = []
     my_list2 = []
 
