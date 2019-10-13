@@ -9,8 +9,8 @@
     <body>
       <br><br><br>
       <img width="256" class="center" height="256" alt="B" src="../static/Logo2.png"><br>
-      <p>This program calculates the bias of a given article.</p>
-      <p>The URL of an article can be used as well as plain text.</p>
+      <p>An online tool that takes text from an article to find</p>
+      <p>the tone of the article as well as the subjectivity.</p>
       <br>
 
       <div class="tab">
@@ -23,7 +23,7 @@
           <form action="{{ url_for('handle_URL') }}" method="post">
             <th><input type="text" name="articleURL" placeholder=" Enter a URL" style="width:75%;height:19px;"></th>
             <br><br>
-            <th><input type="submit" value="Analyze Article"></th>
+            <th><input type="submit" value="Analyze Article" style="padding: 15px 32px;color:white;background-color: #000;border:none;"></th>
           </form>
           <br>
       </div>
@@ -37,7 +37,7 @@
                       rows = "10"
                       style="width:75%;"></textarea>
                       <br><br>
-            <th><input type="submit" value="Analyze Text"></th>
+            <th><input type="submit" value="Analyze Text" style="padding: 15px 32px;color:white;background-color: #000;border:none;"></th>
           </form>
           <br>
       </div>
