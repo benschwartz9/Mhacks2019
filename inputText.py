@@ -20,10 +20,17 @@ def analyze(inpt):
     x = my_list
     y = my_list2
 
-    average_x = sum(x)/len(x)
-    average_y = sum(y)/len(y)
+    average_x = round(sum(x)/len(x) * 100, 2)
+    average_y = round(sum(y)/len(y) * 100, 2)
+    indicator = "Positive"
+    meme = average_x
 
-    return average_x, average_y
+    if (average_x < 0):
+        indicator = "Negative"
+        meme = meme * -1
+
+
+    return average_x, average_y, indicator, meme
 
 
 # example blob for testing

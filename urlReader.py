@@ -46,8 +46,15 @@ def analyze(url):
     x2 = my_list
     y2 = my_list2
 
-    average_x = sum(x2)/len(x2)
-    average_y = sum(y2)/len(y2)
+    average_x = round(sum(x2)/len(x2) * 100, 2)
+    average_y = round(sum(y2)/len(y2) * 100, 2)
+    indicator = "Positive"
+    meme = average_x
 
-    return average_x, average_y
+    if (average_x < 0):
+        indicator = "Negative"
+        meme = meme * -1
+
+
+    return average_x, average_y, indicator, meme
     # ^ values and averages to display
