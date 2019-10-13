@@ -38,6 +38,6 @@ function showTabContent(evt, id) {
   	evt.currentTarget.className += " active";
 }
 
-window.onload = showTabContent(event, 'URLTab');
+
 // [END gae_python37_log]
 

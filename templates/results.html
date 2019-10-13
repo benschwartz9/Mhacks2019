@@ -9,22 +9,20 @@
   </head>
     <body>
         <h1 style="font-size:64px;font-family:'Brush Script MT', cursive;">Results</h1>
-        <!-- <p>{{result}}</p> -->
+        <p>{{result}}</p>
         <h2 style="margin-left: 25%; float: left;">Polarity:</h2>
         <br><br><br><br>
-        <input type="range" min="-1" max="1" value="0" class="slider" id="polarity" step="0.01">
+        <input type="range" min="-1" max="1" value="{{result[0]}}" class="slider" id="polarityAmt" step="0.01">
 	  	<br><br>
-	  	<div style="margin-left: 25%;float: left;display: inline-block;font-size:24px;">-1</div>
-	  	<div style="display: inline-block;font-size:24px;">0</div>
-	  	<div style="display: inline-block;float: right;margin-right: 25%;font-size:24px;">&nbsp;1</div>
+	  	<div style="margin-left: 25%;float: left;display: inline-block;font-size:24px;">Negative</div>
+	  	<div style="display: inline-block;float: right;margin-right: 25%;font-size:24px;">Positive</div>
 	  	<br><br><br>
 	  	<h2 style="margin-left: 25%; float: left;">Subjectivity:</h2>
         <br><br><br><br>
-	  	<input type="range" min="0" max="1" value="0.5" class="slider" id="polarity" step="0.01">
+	  	<input type="range" min="0" max="1" value="{{result[1]}}" class="slider" id="subjectiveAmt" step="0.01">
 	  	<br><br>
-	  	<div style="margin-left: 25%;float: left;display: inline-block;font-size:24px;">0</div>
-	  	<div style="display: inline-block;font-size:24px;">0.5</div>
-	  	<div style="display: inline-block;float: right;margin-right: 25%;font-size:24px;">1</div>
+	  	<div style="margin-left: 25%;float: left;display: inline-block;font-size:24px;">Objective</div>
+	  	<div style="display: inline-block;float: right;margin-right: 25%;font-size:24px;">Subjective</div>
 	  	<br><br>
 	  	<p>The polarity test calculates the tone of the text in terms of being negative (-1) or positive (1).<br>
 	  		The subjectivity test calculates the amount of bias in the text with 0 being the most subjective<br>
