@@ -77,4 +77,13 @@ img {
     cursor: pointer;
 }
 
+.buttons {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  background-color: black;
+}
 
+
+.buttons:hover {
+  background-color: #555 !important;
+}

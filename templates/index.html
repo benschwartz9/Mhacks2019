@@ -14,7 +14,7 @@
       <br>
 
       <div class="tab">
-        <button class="tablinks" onclick="showTabContent(event, 'URLTab')" id="default">URL</button>
+        <button class="tablinks" onclick="showTabContent(event, 'URLTab')">URL</button>
         <button class="tablinks" onclick="showTabContent(event, 'textTab')">Text</button>
       </div>
 
@@ -23,7 +23,7 @@
           <form action="{{ url_for('handle_URL') }}" method="post">
             <th><input type="text" name="articleURL" placeholder=" Enter a URL" style="width:75%;height:19px;"></th>
             <br><br>
-            <th><input type="submit" value="Analyze Article" style="padding: 15px 32px;color:white;background-color: #000;border:none;"></th>
+            <th><input type="submit" class="buttons" value="Analyze Article" style="padding: 15px 32px;color:white;border:none;"></th>
           </form>
           <br>
       </div>
@@ -37,7 +37,7 @@
                       rows = "10"
                       style="width:75%;"></textarea>
                       <br><br>
-            <th><input type="submit" value="Analyze Text" style="padding: 15px 32px;color:white;background-color: #000;border:none;"></th>
+            <th><input type="submit" class="buttons" value="Analyze Text" style="padding: 15px 32px;color:white;border:none;"></th>
           </form>
           <br>
       </div>
