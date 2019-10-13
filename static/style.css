@@ -17,7 +17,7 @@ img {
 .tab {
   overflow: hidden;
   border: none;
-  background-color: #21e892;
+  background-color: #18c87d;
   width: 60%;
   margin-left: 20%;
 }
@@ -49,10 +49,9 @@ img {
 }
 
 .tabcontent {
-  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+  animation: fadeEffect 1s;
 }
 
-/* Go from zero to full opacity */
 @keyframes fadeEffect {
   from {opacity: 0;}
   to {opacity: 1;}
