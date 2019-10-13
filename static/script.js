@@ -16,7 +16,6 @@
 // [START gae_python37_log]
 'use strict';
 
-document.getElementById("default").click();
 
 window.addEventListener('load', function () {
 
@@ -37,6 +36,8 @@ function showTabContent(evt, id) {
 
   	document.getElementById(id).style.display = "block";
   	evt.currentTarget.className += " active";
-} 
+}
+
+window.onload = showTabContent(event, 'URLTab');
 // [END gae_python37_log]
 

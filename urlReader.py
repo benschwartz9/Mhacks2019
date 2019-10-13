@@ -15,7 +15,7 @@ def analyze(url):
     coverpage = r1.content
 
     # Soup creation
-    soup1 = BeautifulSoup(coverpage, 'html.parser') #html5lib
+    # soup1 = BeautifulSoup(coverpage, 'html.parser') #html5lib
 
     soup_article = BeautifulSoup(coverpage, 'html.parser') #html5lib
 
